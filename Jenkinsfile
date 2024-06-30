@@ -9,24 +9,7 @@ pipeline {
 
 		stage('OWASP DependencyCheck') {
 			steps {
-				script {
-
-
-					sh "/var/jenkins_home/tools/org.jenkinsci.plugins.DependencyCheck.tools.DependencyCheckInstallation/OWASP_Dependency-Check_Vulnerabilities/dependency-check/dependency-check.sh \
-
-					--project JenkinsDependencyCheckTest \
-
-					--scan . \
-
-					--out . \
-
-					--format HTML \
-					
-					--format XML \
-
-					--nvdApiKey df1c5439-d1ec-4d5e-ae9a-2d21c4eb2d9b"
-
-				}
+				dependencyCheck additionalArguments: '--format HTML --format XML', odcInstallation: 'OWASP Dependency-Check Vulnerabilities', nvdCredentialsId: 'c1115ae6-42b5-43c4-b6f9-84565600520c'
 			}
 		}
 	}	

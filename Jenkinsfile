@@ -12,7 +12,7 @@ pipeline {
 				script {
 
 
-					sh "${dependencyCheckHome}/bin/dependency-check.sh \
+					sh "/var/jenkins_home/tools/org.jenkinsci.plugins.DependencyCheck.tools.DependencyCheckInstallation/OWASP_Dependency-Check_Vulnerabilities/dependency-check/dependency-check.sh \
 
 					--project JenkinsDependencyCheckTest \
 
